@@ -1,0 +1,25 @@
+.homePage {
+    h1 {
+        text-align: center;
+      }
+    
+      .links {
+        margin-top: 100px;
+        display: flex;
+        justify-content: center;
+        
+    
+        .link {
+          height: 300px;
+          width: 300px;
+          border: 1px solid black;
+          margin-right: 5px;
+        }
+    
+        .img {
+          height: 250px;
+          width: 100%;
+          background-color: burlywood;
+        }
+      }
+  }

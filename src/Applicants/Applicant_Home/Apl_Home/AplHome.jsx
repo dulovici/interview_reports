@@ -21,8 +21,9 @@ export const AplHome = () => {
                 <Card />
                 <Card />
                 <Card />
-
             </div>
         </div>
     )
 }
+
+
