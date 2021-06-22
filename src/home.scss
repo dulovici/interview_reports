@@ -16,10 +16,14 @@
           margin-right: 5px;
         }
     
-        .img {
+        img {
           height: 250px;
           width: 100%;
-          background-color: burlywood;
+          border: 1px solid black;
+        }
+
+        h2 {
+          text-align: center;
         }
       }
   }

@@ -1,5 +1,7 @@
 import React from 'react'
 import './home.scss'
+import imgPub from './public.jpg';
+import imgAdm from './admin.jpg';
 import { Link, Switch, Route } from 'react-router-dom';
 
 export const Home = () => {
@@ -11,14 +13,14 @@ export const Home = () => {
 
                 <Link to={`/applicants/apl-home`}>
                     <div className='link'>
-                        <div className='img'></div>
+                        <img src={imgPub}/>
                         <h2>Applicants</h2>
                     </div>
                 </Link>
 
                 <Link to={`/admin/login`}>
                     <div className='link'>
-                        <div className='img'></div>
+                        <img src={imgAdm}/>
                         <h2>Admin</h2>
                     </div>
                 </Link>
