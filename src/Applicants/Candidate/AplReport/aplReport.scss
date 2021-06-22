@@ -1,0 +1,23 @@
+
+
+
+    .reports {
+        margin-top: 20px;
+        .single-rep {
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid black;
+            padding: 5px;
+            margin-bottom: 5px;
+
+            p {
+                font-size: 20px;
+                font-weight: 500;
+
+                span {
+                    color: gray;
+                    font-weight: 300;
+                }
+            }
+        }
+    }

@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import { Link } from 'react-router-dom';
+
+import { AplHome } from './Applicants/Applicant_Home/Apl_Home/AplHome';
+import { Candidate } from './Applicants/Candidate/Candidate/Candidate';
+import { PopUp } from './Common/PopUp/PopUp'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // <div className='homePage'>
+    //   <h1>Interview Reports</h1>
+
+    //   <div className='links'>
+
+    //     <Link to={`/Applicants/AplHome`}>
+    //       <div className='link'>
+    //         <div className='img'></div>
+    //         <h2>Applicants</h2>
+    //       </div>
+    //     </Link>
+
+    //     <Link to={`/Admin/Login`}>
+    //       <div className='link'>
+    //         <div className='img'></div>
+    //         <h2>Admin</h2>
+    //       </div>
+    //     </Link>
+
+    //   </div>
+    // </div>
+
+    // <AplHome />
+    <>
+      <Candidate />
+      <PopUp />
+    </>
+
   );
 }
 
