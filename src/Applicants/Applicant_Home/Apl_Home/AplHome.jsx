@@ -1,6 +1,5 @@
 import '../Apl_Home/aplHome.scss';
-import { Header } from '../../Header/Header';
-import { Search } from '../../../Common/Search/Search';
+import { Header } from '../../../Common/Header/Header';
 import { Card } from '../Card/Card';
 
 import React from 'react'
@@ -11,7 +10,9 @@ export const AplHome = () => {
             <Header />
             <div className='search'>
                 <p>Candidates</p>
-                <Search />
+                <div className='search-inp'>
+                    <input type='text' placeholder="Search..."></input>
+                </div>
             </div>
 
             <div className='candidates-cards'>

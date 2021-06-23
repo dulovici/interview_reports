@@ -1,0 +1,35 @@
+
+
+.fill-report {
+    width: 100%;
+    margin-left: 30px;
+    display: flex;
+    .select {
+        margin-right: 50px;
+        padding-bottom: 20px;
+    }
+
+    textarea {
+        margin-left: 50px;
+        width: 800px;
+    }
+}
+
+
+
+// .btns {
+//     margin-top: 30px;
+
+//     button {
+//         margin-right: 5px;
+//     }
+// }
+
+.btns {
+    margin-top: 30px;
+    margin-left: 30px;
+
+    button {
+        margin-right: 5px;
+    }
+}

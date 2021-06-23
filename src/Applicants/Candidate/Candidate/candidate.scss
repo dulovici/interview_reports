@@ -1,0 +1,25 @@
+.info {
+    display: flex;
+    padding-top: 30px;
+
+    img {
+        width: 300px;
+    }
+
+    .applicant-info {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        padding-top: 30px;
+        padding-left: 30px;
+
+        .about {
+            width: 50%;
+
+            p {
+                color: gray;
+            }
+        }
+        
+    }
+}
