@@ -1,6 +1,6 @@
 import './App.scss';
 import { Link, Switch, Route } from 'react-router-dom';
-
+import { useState, useEffect } from 'react'
 import { Home } from './Home'
 import { AplHome } from './Applicants/Applicant_Home/Apl_Home/AplHome';
 import { Candidate } from './Applicants/Candidate/Candidate/Candidate';
@@ -10,8 +10,24 @@ import { AdminHome } from './Admin/Admin_Home/AdminHome/AdminHome';
 import { CreateReport } from './Admin/Wizard/CreateReport/CreateReport';
 
 function App() {
+  const [candidates, setCandidates] = useState([])
+  const [reports, setReports] = useState([])
 
-  const data = 'kurcina';
+  useEffect(() => {
+    fetch('http://localhost:3333/api/candidates')
+      .then(res => res.json())
+      .then(data => setCandidates(data))
+  }, [])
+
+
+  useEffect(() => {
+    fetch('http://localhost:3333/api/reports')
+      .then(res => res.json())
+      .then(data => setReports(data))
+  }, [])
+
+
+
 
   return (
     <>
@@ -19,13 +35,13 @@ function App() {
         <Route exact path='/' component={Home}></Route>
 
         <Route exact path='/applicants'>
-          <AplHome />
+          <AplHome candidates={candidates} reports={reports} />
         </Route>
 
         <Route
           path='/applicants/candidate/:id'
           render={(r) => (
-            <Candidate {...r} data={data} />
+            <Candidate {...r} reports={reports} candidates={candidates} />
           )}
         ></Route>
 

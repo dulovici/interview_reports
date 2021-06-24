@@ -7,7 +7,11 @@ import { Link } from 'react-router-dom'
 
 
 export const AplHome = (props) => {
+    const { candidates } = props;
+    const { reports } = props;
 
+    // console.log(candidates);
+    // console.log(reports);
 
     return (
         <div className='apl-home'>
@@ -20,17 +24,15 @@ export const AplHome = (props) => {
             </div>
 
             <div className='candidates-cards'>
-                <Link to={`/applicants/candidate/neki-dinamicki-id`}>
-                    <Card />
-                </Link>
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
+                {candidates.map((e) => {
+                    return <Link to={`/applicants/candidate/${e.id}`}>
+                        <Card data={e} reports={reports} />
+                    </Link>
+                })}
             </div>
         </div>
     )
 }
+
 
 
