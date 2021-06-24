@@ -14,9 +14,7 @@ export const SelectCandidate = () => {
                 <CandidateCard />
             </div>
 
-            <div className='btns'>
-                <button>Next</button>
-            </div>
+
 
         </div>
     )

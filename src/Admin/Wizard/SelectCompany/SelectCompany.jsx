@@ -13,10 +13,7 @@ export const SelectCompany = () => {
                 <p>Kupujem prodajem</p>
             </div>
 
-            <div className='btns'>
-                <button>Back</button>
-                <button>Next</button>
-            </div>
+
 
         </div>
     )

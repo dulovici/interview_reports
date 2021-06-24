@@ -1,5 +1,6 @@
 import React from 'react'
 import './header.scss';
+import { Link } from 'react-router-dom'
 
 export const Header = () => {
     return (
@@ -13,8 +14,8 @@ export const Header = () => {
             <div className='adm'>
                 <h2>Reports Administration</h2>
                 <div className='btns'>
-                    <button>Log Out</button>
-                    <button>Create new Report</button>
+                    <Link to={'/'}><button>Log Out</button></Link>
+                    <Link to={'/admin/create-report'}><button>Create new Report</button></Link>
                 </div>
             </div>
 

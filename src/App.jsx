@@ -11,17 +11,31 @@ import { CreateReport } from './Admin/Wizard/CreateReport/CreateReport';
 
 function App() {
 
+  const data = 'kurcina';
 
   return (
     <>
-      {/* <Switch>
+      <Switch>
         <Route exact path='/' component={Home}></Route>
-        <Route path='/applicants/apl-home/' component={AplHome}></Route>
-        <Route path='/applicants/candidate/' component={Candidate}></Route>
-      </Switch> */}
 
-      < Home />
-      {/* <PopUp /> */}
+        <Route exact path='/applicants'>
+          <AplHome />
+        </Route>
+
+        <Route
+          path='/applicants/candidate/:id'
+          render={(r) => (
+            <Candidate {...r} data={data} />
+          )}
+        ></Route>
+
+        <Route path='/login' component={Login}></Route>
+        <Route exact path='/admin' component={AdminHome}></Route>
+        <Route path='/admin/create-report' component={CreateReport}></Route>
+      </Switch>
+
+      {/* < Candidate />
+      <PopUp /> */}
 
 
     </>

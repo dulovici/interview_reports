@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useState } from 'react';
 import '../CreateReport/createReport.scss';
 import { Header } from '../../../Common/Header/Header';
 import { SelectCandidate } from '../SelectCandidate/SelectCandidate';
@@ -8,6 +8,9 @@ import { FillReport } from '../FillReport/FillReport';
 
 
 export const CreateReport = () => {
+    const [stage, setStage] = useState(1)
+
+
     return (
         <div className='create-report'>
             <Header />
@@ -26,12 +29,33 @@ export const CreateReport = () => {
                 <hr></hr>
 
                 <div className='stage'>
-                    <SelectCandidate />
-                    {/* <SelectCompany /> */}
-                    {/* <FillReport /> */}
+                    {
+                        (() => {
+                            if (stage === 1) {
+                                return <div className='btns'>
+                                    <SelectCandidate />
+                                    <button onClick={() => { setStage(2) }}>Next</button>
+                                </div>
+                            } else if (stage === 2) {
+                                return <div className='btns'>
+                                    <SelectCompany />
+                                    <button onClick={() => { setStage(1) }}>Back</button>
+                                    <button onClick={() => { setStage(3) }}>Next</button>
+                                </div>
+                            } else if (stage === 3) {
+                                return <div className='btns'>
+                                    <FillReport />
+                                    <button onClick={() => { setStage(2) }}>Back</button>
+                                    <button>Submit</button>
+                                </div>
+
+                            }
+                        })()
+                    }
                 </div>
+
             </div>
 
-        </div>
+        </div >
     )
 }

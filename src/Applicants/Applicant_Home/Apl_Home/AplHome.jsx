@@ -1,10 +1,14 @@
+import React from 'react'
 import '../Apl_Home/aplHome.scss';
 import { Header } from '../../../Common/Header/Header';
 import { Card } from '../Card/Card';
+import { Link } from 'react-router-dom'
 
-import React from 'react'
 
-export const AplHome = () => {
+
+export const AplHome = (props) => {
+
+
     return (
         <div className='apl-home'>
             <Header />
@@ -16,7 +20,9 @@ export const AplHome = () => {
             </div>
 
             <div className='candidates-cards'>
-                <Card />
+                <Link to={`/applicants/candidate/neki-dinamicki-id`}>
+                    <Card />
+                </Link>
                 <Card />
                 <Card />
                 <Card />

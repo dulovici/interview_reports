@@ -5,7 +5,13 @@ import { Header } from '../../../Common/Header/Header';
 import img from '../../../dummy.png';
 import { AplReport } from '../AplReport/AplReport';
 
-export const Candidate = () => {
+export const Candidate = (props) => {
+    const { match } = props;
+    const { data } = props;
+
+    console.log(match);
+
+
     return (
         <div className='candidates'>
             <Header />

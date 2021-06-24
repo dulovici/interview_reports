@@ -1,6 +1,7 @@
 import React from 'react';
 import '../Card/card.scss';
 import img from '../../../dummy.png';
+import { Link } from 'react-router-dom'
 
 export const Card = () => {
     return (

@@ -26,10 +26,7 @@ export const FillReport = () => {
 
             </div>
 
-            <div className='btns'>
-                <button>Back</button>
-                <button>Submit</button>
-            </div>
+
         </>
     )
 }

@@ -11,16 +11,16 @@ export const Home = () => {
 
             <div className='links'>
 
-                <Link to={`/applicants/apl-home`}>
+                <Link to={`/applicants`}>
                     <div className='link'>
-                        <img src={imgPub}/>
+                        <img src={imgPub} alt='avatar' />
                         <h2>Applicants</h2>
                     </div>
                 </Link>
 
-                <Link to={`/admin/login`}>
+                <Link to={`/login`}>
                     <div className='link'>
-                        <img src={imgAdm}/>
+                        <img src={imgAdm} alt='avatar' />
                         <h2>Admin</h2>
                     </div>
                 </Link>

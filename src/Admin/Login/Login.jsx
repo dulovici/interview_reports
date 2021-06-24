@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, Redirect } from 'react-router-dom';
 import '../Login/login.scss';
 
 
@@ -16,8 +17,9 @@ export const Login = () => {
                     <input type='password'></input>
                 </div>
 
-                <button>Submit</button>
+                <Link to={`/admin`}> <button>Log In</button></Link>
             </div>
-        </div>
+        </div >
     )
 }
+
