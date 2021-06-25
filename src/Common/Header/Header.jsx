@@ -1,8 +1,21 @@
 import React from 'react'
 import './header.scss';
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 export const Header = () => {
+
+    const removeToken = () => {
+        localStorage.removeItem('token')
+    }
+
+    let history = useHistory()
+
+    const backToHome = () => {
+        history.push('/')
+    }
+
+
+
     return (
         <>
             {/* <div className='apl'>
@@ -14,7 +27,11 @@ export const Header = () => {
             <div className='adm'>
                 <h2>Reports Administration</h2>
                 <div className='btns'>
-                    <Link to={'/'}><button>Log Out</button></Link>
+                    <button onClick={() => {
+                        removeToken()
+                        backToHome()
+                        console.log(localStorage.getItem('token'));
+                    }}>Log Out</button>
                     <Link to={'/admin/create-report'}><button>Create new Report</button></Link>
                 </div>
             </div>

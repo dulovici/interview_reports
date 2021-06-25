@@ -2,7 +2,7 @@ import React from 'react'
 import './home.scss'
 import imgPub from './public.jpg';
 import imgAdm from './admin.jpg';
-import { Link, Switch, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export const Home = () => {
     return (

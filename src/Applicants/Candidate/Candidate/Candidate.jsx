@@ -45,7 +45,7 @@ export const Candidate = (props) => {
                     </div>
                     <div className='about'>
                         <p>Date of Birth:</p>
-                        <h3>{candidate?.birthday}</h3>
+                        <h3>{candidate?.birthday.slice(4, 16)}</h3>
                     </div>
                     <div className='about'>
                         <p>Email:</p>
@@ -108,7 +108,3 @@ export const Candidate = (props) => {
     )
 }
 
-{/* <AplReport />
-            <AplReport />
-            <AplReport />
-            <AplReport /> */}

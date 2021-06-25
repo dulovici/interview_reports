@@ -4,24 +4,41 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid black;
     padding: 5px;
+    background-color: #EDEDD0;
     button {
         height: 20px;
     }
 }
 
 .adm {
+    background-color: #EDEDD0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid black;
     padding: 5px;
+    box-shadow: 1px 7px 13px 5px rgba(0,0,0,0.30);
+
+    h2 {
+        font-weight: 400;
+    }
 
     button {
-        height: 20px;
+        padding-top: 4px;
+        height: 25px;
+        text-align: center;
         margin-left: 5px;
         padding-bottom: 10px;
-        
+        background-color:#b8b84f;
+        border: none;
+        color:white;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #907FA4;
+            color: #EDEDD0;
+        }
+
     }
+    
 }
