@@ -1,5 +1,5 @@
 import './App.scss';
-import { Link, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react'
 import { Home } from './Home'
 import { AplHome } from './Applicants/Applicant_Home/Apl_Home/AplHome';
@@ -46,7 +46,11 @@ function App() {
         ></Route>
 
         <Route path='/login' component={Login}></Route>
-        <Route exact path='/admin' component={AdminHome}></Route>
+
+        <Route exact path='/admin'>
+          <AdminHome reports={reports} />
+        </Route>
+
         <Route path='/admin/create-report' component={CreateReport}></Route>
       </Switch>
 

@@ -12,7 +12,7 @@ export const AplReport = (props) => {
         <div className='reports'>
             <div className='single-rep'>
                 <p><span>Company:</span>{data.companyName}</p>
-                <p><span>Date of Interview:</span> {data.interviewDate}</p>
+                <p><span>Date of Interview:</span> {data.interviewDate.slice(4, 16)}</p>
                 <p><span>Status:</span> {data.status}</p>
                 <p className='see' onClick={() => {
                     getId(data.id)

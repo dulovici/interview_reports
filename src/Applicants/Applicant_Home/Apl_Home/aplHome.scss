@@ -1,14 +1,20 @@
 
 .apl-home {
-border: 1px solid black;
+background-color: #A6D6D6;
 height: 100vh;
     .candidates-cards {
         width: 90%;
         margin: 0 auto;
-        margin-top: 10px;
+        margin-top: 60px;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+
+        .link {
+            text-decoration: none;
+        }
+
+
         
 
     }
@@ -19,6 +25,20 @@ height: 100vh;
         align-items: center;
         margin-top: 10px;
         padding: 0 10px;
+
+        .search-inp {
+            input {
+                height: 30px;
+                background-color: #ddf8f8;
+                border: none;
+                outline: none;
+            }
+        }
+
+        p {
+            font-size: 25px;
+            font-weight: 400;
+        }
     }
 }
 
