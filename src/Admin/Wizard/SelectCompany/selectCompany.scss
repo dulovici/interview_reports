@@ -7,18 +7,14 @@
 
     .companies {
         
-        
-    
-        &:first-child {
-            border-top: 1px solid black;
-        }
     
         p {
             font-size: 23px;
             border: 1px solid black;
-            border-top: none;
             padding: 3px;
             cursor: pointer;
+            margin-bottom: 3px;
+            border-radius: 5px;
             
         }
     }

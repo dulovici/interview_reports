@@ -20,7 +20,7 @@ export const CreateReport = () => {
                     <div className='search-inp'>
                         <input type='text' placeholder="Search..."></input>
                     </div>
-
+                    {/* napravi stejt koja je faza trenutno, pa po tome stavljaj bold na 1,2,3 */}
                     <p>1. Select Candidate</p>
                     <p>2. Select Company</p>
                     <p>3. Fill Report Details</p>
@@ -53,9 +53,10 @@ export const CreateReport = () => {
                         })()
                     }
                 </div>
-
             </div>
-
         </div >
     )
 }
+
+
+// Napravi stejt cija ce inicijalna vrednost biti prazan objekat u formi spremnoj za post metod.

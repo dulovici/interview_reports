@@ -1,9 +1,9 @@
 
 .candidate-card {
     height: 70px;
-    width: 40%;
+    width: 45%;
     border: 1px solid black;
-    margin-right: 40px;
+    margin-right: 20px;
     margin-bottom: 20px;
     display: flex;
     cursor: pointer;
@@ -14,6 +14,7 @@
     }
 
     .info {
+        width: 100%;
         display: flex;
         flex-direction: column;
         margin-left: 10px;
