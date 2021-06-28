@@ -7,15 +7,18 @@ import { Report } from '../Report/Report'
 
 export const AdminHome = (props) => {
     const { reports } = props;
-    const [singleReport, setSingleReport] = useState(null)
+    const { setReports } = props;
+    const [singleReport, setSingleReport] = useState()
     const [showPopUp, setShowPopUp] = useState('hidden')
 
     const [search, setSearch] = useState('');
     const [filteredReports, setFilteredReports] = useState([])
 
     useEffect(() => {
+        console.log('pera');
+        console.log(reports);
         setFilteredReports(reports?.filter((e) => {
-            return e.candidateName.toLowerCase().includes(search.toLowerCase()) || e.companyName.toLowerCase().includes(search.toLowerCase())
+            return e.candidateName?.toLowerCase().includes(search.toLowerCase()) || e.companyName?.toLowerCase().includes(search.toLowerCase())
         }))
     }, [search, reports])
 
@@ -39,7 +42,7 @@ export const AdminHome = (props) => {
                 </div>
 
                 {filteredReports?.map((e) => {
-                    return <Report data={e} key={e.id} id={e.id} getId={getId} show={show} />
+                    return <Report data={e} key={e.id} id={e.id} getId={getId} show={show} reports={reports} setReports={setReports} />
                 })}
 
             </div>
@@ -63,7 +66,7 @@ export const AdminHome = (props) => {
                             </div>
                             <div className="data-info">
                                 <p>Interview Date</p>
-                                <h3>{singleReport?.interviewDate.slice(4, 16)}</h3>
+                                <h3>{singleReport.interviewDate?.slice(4, 16)}</h3>
                             </div>
                             <div className="data-info">
                                 <p>Phase</p>
@@ -77,8 +80,8 @@ export const AdminHome = (props) => {
                         <div className="note">
                             <p><span>Notes</span></p>
                             <p className='text'>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur rerum ad, aliquid inventore cupiditate praesentium amet rem? Architecto provident exercitationem veniam, laudantium ipsum soluta omnis distinctio, excepturi praesentium est repellat. Voluptates cumque nemo exercitationem, soluta reiciendis quas ipsum. Libero dolor corporis unde. Sunt quos iusto saepe odio quidem mollitia perferendis.
-                        </p>
+                                {singleReport?.note}
+                            </p>
                         </div>
                     </div>
 

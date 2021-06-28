@@ -8,11 +8,12 @@ import { PopUp } from './Common/PopUp/PopUp'
 import { Login } from './Admin/Login/Login';
 import { AdminHome } from './Admin/Admin_Home/AdminHome/AdminHome';
 import { CreateReport } from './Admin/Wizard/CreateReport/CreateReport';
+import { SelectCandidate } from './Admin/Wizard/SelectCandidate/SelectCandidate';
 
 function App() {
   const [candidates, setCandidates] = useState([])
   const [reports, setReports] = useState([])
-
+  console.log(candidates);
   useEffect(() => {
     fetch('http://localhost:3333/api/candidates')
       .then(res => res.json())
@@ -27,7 +28,7 @@ function App() {
   }, [])
 
 
-
+  console.log(reports);
 
   return (
     <>
@@ -48,10 +49,12 @@ function App() {
         <Route path='/login' component={Login}></Route>
 
         <Route exact path='/admin'>
-          <AdminHome reports={reports} />
+          <AdminHome reports={reports} setReports={setReports} />
         </Route>
 
-        <Route path='/admin/create-report' component={CreateReport}></Route>
+        <Route path='/admin/create-report' >
+          <CreateReport candidates={candidates} reports={reports} setReports={setReports} />
+        </Route>
       </Switch>
 
       {/* < Candidate />

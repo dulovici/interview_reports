@@ -7,17 +7,26 @@
     margin-bottom: 20px;
     display: flex;
     cursor: pointer;
-
+    background-color: rgb(245, 245, 245);
+   
     img {
         height: 100%;
+       
         
     }
 
     .info {
+       
         width: 100%;
         display: flex;
         flex-direction: column;
         margin-left: 10px;
         padding-top: 10px;
+    
     }
+
+}
+
+.active {
+    background-color: #A6D6D6;
 }

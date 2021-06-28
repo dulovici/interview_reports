@@ -1,16 +1,27 @@
-import React from 'react';
+import { React, useState, useEffect } from 'react';
 import '../SelectCompany/selectCompany.scss';
+import { CompanyCard } from '../SelectCompany/CompanyCard/CompanyCard';
 
-export const SelectCompany = () => {
+export const SelectCompany = (props) => {
+    const { getCompanyData } = props;
+    const [companyData, setCompanyData] = useState();
+
+    useEffect(() => {
+        fetch('http://localhost:3333/api/companies')
+            .then(res => res.json())
+            .then(data => setCompanyData(data))
+    }, [])
+
+
+    console.log(companyData);
+
+
     return (
         <div className='companies-wr'>
             <div className='companies'>
-                <p>Kupujem prodajem</p>
-                <p>Kupujem prodajem</p>
-                <p>Kupujem prodajem</p>
-                <p>Kupujem prodajem</p>
-                <p>Kupujem prodajem</p>
-                <p>Kupujem prodajem</p>
+                {companyData?.map((e) => {
+                    return <CompanyCard key={e.id} data={e} getCompanyData={getCompanyData} />
+                })}
             </div>
         </div>
     )

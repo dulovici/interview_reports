@@ -12,7 +12,7 @@ export const Candidate = (props) => {
     const { match } = props;
     const { reports } = props;
     const { candidates } = props;
-
+    console.log(candidates);
 
     const id = Number(match.params.id);
     const reportsForPerson = reports.filter((e) => e.candidateId === id);
@@ -28,9 +28,7 @@ export const Candidate = (props) => {
         setPopUp(arg)
     }
 
-
-    // console.log(singleReport);
-
+    // renderuj samo sa uslovom da ima kandidata 
     return (
         <div className='candidates'>
             <Header />
@@ -45,7 +43,7 @@ export const Candidate = (props) => {
                     </div>
                     <div className='about'>
                         <p>Date of Birth:</p>
-                        <h3>{candidate?.birthday.slice(4, 16)}</h3>
+                        <h3>{candidate?.birthday?.slice(4, 16)}</h3>
                     </div>
                     <div className='about'>
                         <p>Email:</p>
@@ -80,7 +78,7 @@ export const Candidate = (props) => {
                             </div>
                             <div className="data-info">
                                 <p>Interview Date</p>
-                                <h3>{singleReport?.interviewDate.slice(4, 16)}</h3>
+                                <h3>{singleReport?.interviewDate?.slice(4, 16)}</h3>
                             </div>
                             <div className="data-info">
                                 <p>Phase</p>

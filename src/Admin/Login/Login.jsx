@@ -8,7 +8,7 @@ export const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [token, setToken] = useState('')
-
+    console.log(token);
     let history = useHistory()
 
 

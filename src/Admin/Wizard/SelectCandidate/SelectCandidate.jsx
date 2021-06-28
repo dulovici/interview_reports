@@ -1,18 +1,25 @@
-import React from 'react'
+import { React, useState } from 'react'
 import './selectCandidate.scss';
 import { CandidateCard } from '../SelectCandidate/CandidateCard/CandidateCard';
 
-export const SelectCandidate = () => {
+export const SelectCandidate = (props) => {
+
+    const { candidates } = props;
+    const { getCandidateData } = props;
+    const { report } = props;
+
+
+
+    // console.log(id);
 
     return (
         <div className='card-wr'>
             <div className='select-candidate'>
-                <CandidateCard />
-                <CandidateCard />
-                <CandidateCard />
-                <CandidateCard />
-                <CandidateCard />
-                <CandidateCard />
+                {candidates.map((e) => {
+                    return <CandidateCard report={report} data={e} key={e.id} getCandidateData={() => {
+                        getCandidateData(e.name, e.id)
+                    }} />
+                })}
             </div>
         </div>
     )
