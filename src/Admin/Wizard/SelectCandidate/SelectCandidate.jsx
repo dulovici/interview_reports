@@ -4,10 +4,12 @@ import { CandidateCard } from '../SelectCandidate/CandidateCard/CandidateCard';
 
 export const SelectCandidate = (props) => {
 
-    const { candidates } = props;
+    const { candidates, filteredCandidates } = props;
     const { getCandidateData } = props;
     const { report } = props;
+    const [activeId, setActiveId] = useState(0);
 
+    console.log(filteredCandidates);
 
 
     // console.log(id);
@@ -15,8 +17,8 @@ export const SelectCandidate = (props) => {
     return (
         <div className='card-wr'>
             <div className='select-candidate'>
-                {candidates.map((e) => {
-                    return <CandidateCard report={report} data={e} key={e.id} getCandidateData={() => {
+                {filteredCandidates?.map((e) => {
+                    return <CandidateCard activeId={activeId} setActiveId={setActiveId} report={report} data={e} key={e.id} getCandidateData={() => {
                         getCandidateData(e.name, e.id)
                     }} />
                 })}

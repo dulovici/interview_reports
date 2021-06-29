@@ -5,27 +5,25 @@ import img from '../../../../dummy.png'
 export const CandidateCard = (props) => {
     const { data } = props;
     const { getCandidateData } = props;
-
-
-    const [isActive, setIsActive] = useState('');
-    // const [id, setId] = useState(null);
+    const { activeId, setActiveId } = props;
 
 
 
+    // console.log(data);
 
 
     return (
-        <div onClick={() => {
-            getCandidateData()
-            // setId(data.id)
-            setIsActive('active')
-        }} className={`candidate-card ${isActive}`}>
-            <img src={img} alt='img' />
-            <div className='info'>
-                <p>{data.name}</p>
-                <p>{data.email.toLowerCase()}</p>
-            </div>
-        </div>
+        data ?
+            <div onClick={() => {
+                getCandidateData()
+                setActiveId(data?.id)
+            }} className={activeId === data?.id ? `candidate-card active` : 'candidate-card'}>
+                <img src={data?.avatar} alt='img' />
+                <div className='info'>
+                    <p>{data?.name}</p>
+                    <p>{data?.email.toLowerCase()}</p>
+                </div>
+            </div> : null
     )
 }
 

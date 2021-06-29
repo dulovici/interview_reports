@@ -1,9 +1,13 @@
 
 .apl-home {
-background-color: #A6D6D6;
-height: 100vh;
+
+height: 100%;
+p {
+    color: whitesmoke;
+}
 
     .candidates-cards {
+       
         width: 90%;
         margin: 0 auto;
         margin-top: 60px;
@@ -26,7 +30,7 @@ height: 100vh;
         .search-inp {
             input {
                 height: 30px;
-                background-color: #ddf8f8;
+                background-color: #98c5c5;
                 border: none;
                 outline: none;
             }

@@ -3,16 +3,10 @@ import '../Report/report.scss'
 
 export const Report = (props) => {
 
-    const { data } = props;
-    const { id } = props;
-    const { getId } = props;
-    const { show } = props;
-    const { reports } = props;
-    const { setReports } = props;
+    const { data, id, getId, show, reports, setReports } = props;
+
 
     const deleteReport = () => {
-        console.log(id);
-        console.log(localStorage.getItem('token'));
         fetch(`http://localhost:3333/api/reports/${id}`, {
             method: 'DELETE',
             headers: {
@@ -20,7 +14,6 @@ export const Report = (props) => {
             }
         }).then(() => setReports([...reports].filter((e) => e?.id !== id)))
     }
-    console.log(reports);
 
 
     return (

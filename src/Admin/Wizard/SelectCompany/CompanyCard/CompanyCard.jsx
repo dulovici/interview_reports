@@ -4,15 +4,15 @@ import '../CompanyCard/companyCard.scss';
 export const CompanyCard = (props) => {
     const { data } = props;
     const { getCompanyData } = props;
+    const { activeCompanyId, setActiveCompanyId } = props;
 
-    const [isActive, setIsActive] = useState('')
 
 
 
     return (
-        <div className={`company-card ${isActive}`} onClick={() => {
+        <div className={activeCompanyId === data.id ? `company-card active` : 'company-card'} onClick={() => {
             getCompanyData(data.name, data.id)
-            setIsActive('active')
+            setActiveCompanyId(data.id)
         }}>
             <p>{data.name}</p>
         </div>

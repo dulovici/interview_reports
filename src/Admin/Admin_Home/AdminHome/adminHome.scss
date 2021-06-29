@@ -5,8 +5,9 @@
     .search-inp {
         margin-top: 20px;
         
+        
         input {
-            padding-left: 5px;
+            padding: 5px;
             border-radius: 20px;
             outline: none;
         }
@@ -27,7 +28,9 @@
     .content {
         width: 700px;
         height: 400px;
-        background-color: rgb(235, 235, 235);
+        background-color: rgb(255, 252, 224) ;
+        border-radius: 10px;
+        box-shadow: 5px 5px 10px 5px rgb(48, 48, 48);
         display: flex;
         flex-direction: column;
 

@@ -2,17 +2,15 @@ import { React, useState } from 'react';
 import '../Candidate/candidate.scss';
 import '../../../Common/Header/Header';
 import { Header } from '../../../Common/Header/Header';
-import img from '../../../dummy.png';
 import { AplReport } from '../AplReport/AplReport';
 
 export const Candidate = (props) => {
+    const { match, candidates, reports } = props;
+
+
     const [repId, setRepId] = useState()
     const [popUp, setPopUp] = useState('hidden')
 
-    const { match } = props;
-    const { reports } = props;
-    const { candidates } = props;
-    console.log(candidates);
 
     const id = Number(match.params.id);
     const reportsForPerson = reports.filter((e) => e.candidateId === id);
@@ -28,13 +26,13 @@ export const Candidate = (props) => {
         setPopUp(arg)
     }
 
-    // renderuj samo sa uslovom da ima kandidata 
+
     return (
         <div className='candidates'>
             <Header />
 
             <div className='info'>
-                <img src={img} alt='img'></img>
+                <img src={candidate?.avatar} alt='img'></img>
 
                 <div className='applicant-info'>
                     <div className='about'>
@@ -56,7 +54,7 @@ export const Candidate = (props) => {
                 </div>
             </div>
 
-            <p>Reports</p>
+            <p className='rep'>Reports</p>
 
             {reportsForPerson?.map((e) => <AplReport data={e} key={e.id} getId={getId} shouldPopUp={shouldPopUp} />)}
 

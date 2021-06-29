@@ -7,8 +7,7 @@ import { Link } from 'react-router-dom'
 
 
 export const AplHome = (props) => {
-    const { candidates } = props;
-    const { reports } = props;
+    const { reports, candidates, setToken } = props;
 
     const [filteredCandidates, setFilteredCandidates] = useState([]);
     const [search, setSearch] = useState('');
@@ -23,7 +22,7 @@ export const AplHome = (props) => {
 
     return (
         <div className='apl-home'>
-            <Header />
+            <Header setToken={setToken} />
             <div className='search'>
                 <p>Candidates</p>
                 <div className='search-inp'>
@@ -33,7 +32,7 @@ export const AplHome = (props) => {
 
             <div className='candidates-cards'>
                 {filteredCandidates?.map((e) => {
-                    return <Link to={`/applicants/candidate/${e.id}`} className='link'>
+                    return <Link key={e.id} to={`/applicants/candidate/${e.id}`} className='link'>
                         <Card data={e} reports={reports} />
                     </Link>
                 })}

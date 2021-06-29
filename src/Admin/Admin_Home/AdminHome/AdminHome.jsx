@@ -6,8 +6,8 @@ import { Report } from '../Report/Report'
 
 
 export const AdminHome = (props) => {
-    const { reports } = props;
-    const { setReports } = props;
+    const { reports, setReports, setToken } = props;
+
     const [singleReport, setSingleReport] = useState()
     const [showPopUp, setShowPopUp] = useState('hidden')
 
@@ -15,8 +15,6 @@ export const AdminHome = (props) => {
     const [filteredReports, setFilteredReports] = useState([])
 
     useEffect(() => {
-        console.log('pera');
-        console.log(reports);
         setFilteredReports(reports?.filter((e) => {
             return e.candidateName?.toLowerCase().includes(search.toLowerCase()) || e.companyName?.toLowerCase().includes(search.toLowerCase())
         }))
@@ -36,7 +34,7 @@ export const AdminHome = (props) => {
     return (
         <>
             <div className='adm-home'>
-                <Header />
+                <Header setToken={setToken} />
                 <div className='search-inp'>
                     <input type='text' placeholder="Search..." onChange={(e) => setSearch(e.target.value)}></input>
                 </div>

@@ -3,24 +3,34 @@ import '../SelectCompany/selectCompany.scss';
 import { CompanyCard } from '../SelectCompany/CompanyCard/CompanyCard';
 
 export const SelectCompany = (props) => {
-    const { getCompanyData } = props;
+    const { getCompanyData, searchCompanies } = props;
     const [companyData, setCompanyData] = useState();
+    const [activeCompanyId, setActiveCompanyId] = useState(0)
+    const [filteredCompanies, setFilteredCompanies] = useState([])
 
     useEffect(() => {
         fetch('http://localhost:3333/api/companies')
             .then(res => res.json())
-            .then(data => setCompanyData(data))
+            .then(data => {
+                setCompanyData(data)
+                setFilteredCompanies(data)
+            })
     }, [])
 
+    useEffect(() => {
+        setFilteredCompanies(companyData?.filter((e) => {
+            return e.name?.toLowerCase().includes(searchCompanies.toLowerCase())
+        }))
+    }, [searchCompanies, companyData])
 
-    console.log(companyData);
+
 
 
     return (
         <div className='companies-wr'>
             <div className='companies'>
-                {companyData?.map((e) => {
-                    return <CompanyCard key={e.id} data={e} getCompanyData={getCompanyData} />
+                {filteredCompanies?.map((e) => {
+                    return <CompanyCard activeCompanyId={activeCompanyId} setActiveCompanyId={setActiveCompanyId} key={e.id} data={e} getCompanyData={getCompanyData} />
                 })}
             </div>
         </div>

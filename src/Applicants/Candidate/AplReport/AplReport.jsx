@@ -2,11 +2,9 @@ import React from 'react';
 import './aplReport.scss';
 
 export const AplReport = (props) => {
-    const { data } = props;
-    const { getId } = props;
-    const { shouldPopUp } = props;
+    const { data, getId, shouldPopUp } = props;
 
-    console.log(data);
+
 
     return (
         <div className='reports'>
