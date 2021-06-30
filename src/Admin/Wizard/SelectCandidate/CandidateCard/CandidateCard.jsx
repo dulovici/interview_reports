@@ -1,15 +1,10 @@
 import { React, useState, useEffect } from 'react';
 import '../CandidateCard/candidateCard.scss';
-import img from '../../../../dummy.png'
 
 export const CandidateCard = (props) => {
-    const { data } = props;
-    const { getCandidateData } = props;
-    const { activeId, setActiveId } = props;
+    const { data, getCandidateData, activeId, setActiveId } = props;
 
 
-
-    // console.log(data);
 
 
     return (

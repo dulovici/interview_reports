@@ -4,9 +4,12 @@ import { CompanyCard } from '../SelectCompany/CompanyCard/CompanyCard';
 
 export const SelectCompany = (props) => {
     const { getCompanyData, searchCompanies } = props;
+
     const [companyData, setCompanyData] = useState();
     const [activeCompanyId, setActiveCompanyId] = useState(0)
     const [filteredCompanies, setFilteredCompanies] = useState([])
+
+
 
     useEffect(() => {
         fetch('http://localhost:3333/api/companies')
@@ -37,11 +40,3 @@ export const SelectCompany = (props) => {
     )
 }
 
-
-// Napravi komponentu Company
-
-// U ovu komponentu se fečuje data svih kompanija i na osnovu tog niza se dinamicki kreira lista kompanija;
-
-//U svaki <Company /> data o single kompaniji i onklik funkcija koja te informacije salje u objekat koji kreiramo.
-
-// companies.map(e => < Company data={e} name={e.name} compId={e.compId} onClick={funkcija koja ubacuje name i id u objekat.}>)

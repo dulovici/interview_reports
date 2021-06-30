@@ -2,9 +2,7 @@ import { React } from 'react';
 import '../CompanyCard/companyCard.scss';
 
 export const CompanyCard = (props) => {
-    const { data } = props;
-    const { getCompanyData } = props;
-    const { activeCompanyId, setActiveCompanyId } = props;
+    const { data, getCompanyData, activeCompanyId, setActiveCompanyId } = props;
 
 
 
