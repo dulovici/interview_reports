@@ -25,11 +25,6 @@ export const CreateReport = (props) => {
     }, [searchCandidates, candidates])
 
 
-
-
-    const token = localStorage.getItem('token')
-
-
     let history = useHistory()
 
     const backToHome = () => {

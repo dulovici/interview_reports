@@ -1,9 +1,8 @@
-import { React, useState, useEffect } from 'react';
+import { React } from 'react';
 import '../CandidateCard/candidateCard.scss';
 
 export const CandidateCard = (props) => {
     const { data, getCandidateData, activeId, setActiveId } = props;
-
 
 
 

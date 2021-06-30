@@ -18,7 +18,7 @@ export const Report = (props) => {
 
 
     return (
-        <div className='report'>
+        <div key={id} className='report'>
             <div className='adm-report'>
                 <p><span>Company:</span>{data?.companyName}</p>
                 <p><span>Name:</span>{data?.candidateName}</p>

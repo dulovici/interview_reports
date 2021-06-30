@@ -8,9 +8,9 @@ import "react-datepicker/dist/react-datepicker.css";
 
 
 export const FillReport = (props) => {
-    const { report } = props;
-    const { setReport } = props;
+    const { report, setReport } = props;
 
+    // eslint-disable-next-line no-unused-vars
     const [startDate, setStartDate] = useState(new Date())
 
 

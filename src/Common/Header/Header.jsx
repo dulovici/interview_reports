@@ -33,7 +33,6 @@ export const Header = (props) => {
                         <button onClick={() => {
                             removeToken()
                             backToHome()
-                            console.log(localStorage.getItem('token'));
                         }}>Log Out</button>
                         <Link to={'/admin/create-report'}><button>Create new Report</button></Link>
                     </div>
@@ -49,18 +48,7 @@ export const Header = (props) => {
                     </div>
                 </div>}
 
-
-            {/* <div className='adm'>
-                <h2>Reports Administration</h2>
-                <div className='btns'>
-                    <button>Log Out</button>
-                    <button>Create new Report</button>
-                </div>
-            </div> */}
-
         </>
-
-
 
     )
 }
