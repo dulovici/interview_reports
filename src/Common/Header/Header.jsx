@@ -1,6 +1,7 @@
 import React from 'react'
 import './header.scss';
 import { Link, useHistory } from 'react-router-dom';
+import { DiProlog } from "react-icons/di";
 
 export const Header = (props) => {
 
@@ -27,7 +28,7 @@ export const Header = (props) => {
             {localStorage.getItem('token')
                 ?
                 <div className='adm'>
-                    <h2>Reports Administration</h2>
+                    <h2>Reports Administration<DiProlog /></h2>
                     <div className='btns'>
                         <button onClick={() => {
                             removeToken()
@@ -41,7 +42,7 @@ export const Header = (props) => {
                 :
 
                 <div className='apl'>
-                    <h2>Interview Report</h2>
+                    <h2>Interview Reports<DiProlog /></h2>
                     <div className='btns'>
                         <button onClick={() => { history.push('/applicants') }}>Home</button>
                         <button onClick={() => { history.push('/login') }}>Log In</button>

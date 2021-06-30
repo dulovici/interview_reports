@@ -15,6 +15,7 @@ export const Candidate = (props) => {
     const id = Number(match.params.id);
     const reportsForPerson = reports.filter((e) => e.candidateId === id);
     const candidate = candidates.find((e) => e.id === id);
+    // eslint-disable-next-line eqeqeq
     const singleReport = reportsForPerson.find(e => e.id == repId)
 
 

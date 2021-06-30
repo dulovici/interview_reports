@@ -10,6 +10,7 @@
         img {
             width: 300px;
             margin-left: 5px;
+            border-radius: 10px 0 0 10px;
         }
     
         .applicant-info {
@@ -21,7 +22,7 @@
             margin: 0 5px;
             // border: 1px solid black;
             background-color: whitesmoke;
-            border-radius: 5px;
+            border-radius:0 10px 10px 0;
             
     
             .about {

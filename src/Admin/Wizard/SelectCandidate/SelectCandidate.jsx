@@ -3,16 +3,12 @@ import './selectCandidate.scss';
 import { CandidateCard } from '../SelectCandidate/CandidateCard/CandidateCard';
 
 export const SelectCandidate = (props) => {
-
     const { candidates, filteredCandidates } = props;
     const { getCandidateData } = props;
     const { report } = props;
+
     const [activeId, setActiveId] = useState(0);
 
-    console.log(filteredCandidates);
-
-
-    // console.log(id);
 
     return (
         <div className='card-wr'>

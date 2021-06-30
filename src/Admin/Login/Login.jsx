@@ -49,9 +49,14 @@ export const Login = (props) => {
                         <input type='password' onChange={(e) => { setPassword(e.target.value) }}></input>
                     </div>
 
-                    <button onClick={logIn}> Log In</button>
-                    <button onClick={backToHome}>Home</button>
+                    <div className='btns'>
+                        <button onClick={logIn}> Log In</button>
+                        <button onClick={backToHome}>Home</button>
+                    </div>
                 </div>
+
+
+
             </div >
     )
 }

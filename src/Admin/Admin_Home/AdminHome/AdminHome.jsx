@@ -24,6 +24,7 @@ export const AdminHome = (props) => {
 
 
     const getId = (par) => {
+        // eslint-disable-next-line eqeqeq
         setSingleReport(reports?.find((e) => e.id == par))
     }
     const show = (arg) => {

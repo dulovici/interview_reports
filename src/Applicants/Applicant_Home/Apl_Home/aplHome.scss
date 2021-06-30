@@ -4,6 +4,8 @@
 height: 100%;
 p {
     color: whitesmoke;
+
+  
 }
 
     .candidates-cards {
@@ -27,18 +29,24 @@ p {
         margin-top: 10px;
         padding: 0 10px;
 
+        
+
+
         .search-inp {
             input {
                 height: 30px;
-                background-color: #98c5c5;
-                border: none;
+                background-color: #bdd3d3;
+                border: 1px solid gray;
                 outline: none;
+                border-radius: 5px;
             }
         }
 
         p {
+            color: rgb(53, 53, 53);;
             font-size: 25px;
-            font-weight: 400;
+            font-weight: 700;
+            letter-spacing: 2px;
         }
     }
 }

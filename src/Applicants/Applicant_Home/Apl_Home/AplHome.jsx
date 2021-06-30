@@ -24,7 +24,7 @@ export const AplHome = (props) => {
         <div className='apl-home'>
             <Header setToken={setToken} />
             <div className='search'>
-                <p>Candidates</p>
+                <p >Candidates</p>
                 <div className='search-inp'>
                     <input type='text' placeholder="Search..." onChange={(e) => { setSearch(e.target.value) }}></input>
                 </div>

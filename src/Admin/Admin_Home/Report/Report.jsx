@@ -1,5 +1,6 @@
 import React from 'react'
 import '../Report/report.scss'
+import { MdRemoveRedEye, MdHighlightOff } from "react-icons/md";
 
 export const Report = (props) => {
 
@@ -27,8 +28,8 @@ export const Report = (props) => {
                     <p className='see' onClick={() => {
                         getId(id)
                         show('')
-                    }}>#</p>
-                    <p className='close' onClick={deleteReport}>x</p>
+                    }}><MdRemoveRedEye /></p>
+                    <p className='close' onClick={deleteReport}><MdHighlightOff /></p>
                 </div>
             </div>
         </div>

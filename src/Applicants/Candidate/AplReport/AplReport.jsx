@@ -1,5 +1,6 @@
 import React from 'react';
 import './aplReport.scss';
+import { MdRemoveRedEye } from "react-icons/md";
 
 export const AplReport = (props) => {
     const { data, getId, shouldPopUp } = props;
@@ -15,7 +16,7 @@ export const AplReport = (props) => {
                 <p className='see' onClick={() => {
                     getId(data.id)
                     shouldPopUp('')
-                }}>#</p>
+                }}><MdRemoveRedEye /></p>
             </div>
         </div>
     )
