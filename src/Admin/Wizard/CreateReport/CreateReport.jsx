@@ -1,15 +1,22 @@
-import { React, useState, useEffect } from 'react';
+import { React, useState, useEffect, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import '../CreateReport/createReport.scss';
 import { Header } from '../../../Common/Header/Header';
 import { SelectCandidate } from '../SelectCandidate/SelectCandidate';
 import { SelectCompany } from '../SelectCompany/SelectCompany';
 import { FillReport } from '../FillReport/FillReport';
+import { tokenContext } from '../../../App'
+import { candidatesContext } from '../../../App';
+import { reportsContext } from '../../../App';
+
 
 
 
 export const CreateReport = (props) => {
-    const { candidates, setReports, reports, setToken } = props;
+    const { reports, setReports } = useContext(reportsContext);
+
+    const { setToken } = useContext(tokenContext)
+    const { candidates } = useContext(candidatesContext);
 
     const [stage, setStage] = useState(1)
     const [report, setReport] = useState({})
@@ -107,5 +114,3 @@ export const CreateReport = (props) => {
     )
 }
 
-
-// Napravi stejt cija ce inicijalna vrednost biti prazan objekat u formi spremnoj za post metod.

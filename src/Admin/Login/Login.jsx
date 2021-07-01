@@ -1,10 +1,10 @@
-import { React, useState } from 'react';
+import { React, useState, useContext } from 'react';
 import { Redirect, useHistory } from 'react-router-dom';
 import '../Login/login.scss';
-
+import { tokenContext } from '../../App'
 
 export const Login = (props) => {
-    const { token, setToken } = props;
+    const { token, setToken } = useContext(tokenContext)
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')

@@ -1,12 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import '../AdminHome/adminHome.scss';
 import '../../../Common/Header/Header'
 import { Header } from '../../../Common/Header/Header';
 import { Report } from '../Report/Report'
+import { tokenContext } from '../../../App'
+import { reportsContext } from '../../../App';
+
 
 
 export const AdminHome = (props) => {
-    const { reports, setReports, setToken } = props;
+    const { setToken } = useContext(tokenContext)
+
+    const { reports, setReports } = useContext(reportsContext);
 
     const [singleReport, setSingleReport] = useState()
     const [showPopUp, setShowPopUp] = useState('hidden')

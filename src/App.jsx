@@ -1,4 +1,5 @@
 import './App.scss';
+import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { useState, useEffect } from 'react'
 import { Home } from './Home'
@@ -8,11 +9,23 @@ import { Login } from './Admin/Login/Login';
 import { AdminHome } from './Admin/Admin_Home/AdminHome/AdminHome';
 import { CreateReport } from './Admin/Wizard/CreateReport/CreateReport';
 
+export const tokenContext = React.createContext();
+export const candidatesContext = React.createContext();
+export const reportsContext = React.createContext();
+
+const TokenProvider = tokenContext.Provider;
+const CandidatesProvider = candidatesContext.Provider;
+const ReportProvider = reportsContext.Provider;
+
+
 
 function App() {
   const [candidates, setCandidates] = useState([])
   const [reports, setReports] = useState([])
   const [token, setToken] = useState(localStorage.getItem('token'))
+
+
+
   // fetch
   useEffect(() => {
     fetch('http://localhost:3333/api/candidates')
@@ -35,39 +48,38 @@ function App() {
   return (
     <>
       <Switch>
-        <Route exact path='/' component={Home}></Route>
+        <CandidatesProvider value={{ candidates, setCandidates }}>
+          <ReportProvider value={{ reports, setReports }}>
+            <TokenProvider value={{ token, setToken }}>
 
-        <Route exact path='/applicants'>
-          <AplHome candidates={candidates} reports={reports} setToken={setToken} />
-        </Route>
+              <Route exact path='/' component={Home}></Route>
 
-        <Route
-          path='/applicants/candidate/:id'
-          render={(r) => (
-            <Candidate {...r} reports={reports} candidates={candidates} />
-          )}
-        ></Route>
+              <Route exact path='/applicants' component={AplHome} />
 
+              <Route
+                path='/applicants/candidate/:id'
+                render={(r) => (
+                  <Candidate {...r} />
+                )}
+              ></Route>
 
+              <Route path='/login' component={Login} />
 
-        <Route path='/login'>
-          <Login setToken={setToken} token={token} />
-        </Route>
+              <Route exact path='/admin'>
+                {token ?
+                  <AdminHome /> : <Redirect to={'/login'} />
+                }
+              </Route>
 
-        <Route exact path='/admin'>
-          {token ?
-            <AdminHome reports={reports} setReports={setReports} setToken={setToken} /> : <Redirect to={'/login'} />
-          }
-        </Route>
+              <Route path='/admin/create-report' >
+                {token ?
+                  <CreateReport /> : <Redirect to={'/'} />}
+              </Route>
 
-        <Route path='/admin/create-report' >
-          {token ?
-            <CreateReport candidates={candidates} reports={reports} setReports={setReports} setToken={setToken} /> : <Redirect to={'/'} />}
-        </Route>
+            </TokenProvider>
+          </ReportProvider>
+        </CandidatesProvider>
       </Switch>
-
-
-
 
     </>
 
