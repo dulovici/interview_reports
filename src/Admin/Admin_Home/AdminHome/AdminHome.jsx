@@ -29,7 +29,7 @@ export const AdminHome = (props) => {
 
 
     const getId = (par) => {
-        setSingleReport(reports?.find((e) => e.id == par))
+        setSingleReport(reports?.find((e) => e.id === parseInt(par)))
     }
 
     const show = (arg) => {

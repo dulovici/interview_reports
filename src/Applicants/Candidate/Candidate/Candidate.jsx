@@ -1,6 +1,6 @@
-import { React, useState, useContext } from 'react';
 import '../Candidate/candidate.scss';
 import '../../../Common/Header/Header';
+import { React, useState, useContext } from 'react';
 import { Header } from '../../../Common/Header/Header';
 import { AplReport } from '../AplReport/AplReport';
 import { candidatesContext } from '../../../App';
@@ -19,8 +19,7 @@ export const Candidate = (props) => {
     const id = Number(match.params.id);
     const reportsForPerson = reports.filter((e) => e.candidateId === id);
     const candidate = candidates.find((e) => e.id === id);
-    // eslint-disable-next-line eqeqeq
-    const singleReport = reportsForPerson.find(e => e.id == repId)
+    const singleReport = reportsForPerson.find(e => e.id === parseInt(repId))
 
 
     const getId = (repId) => {
@@ -99,11 +98,8 @@ export const Candidate = (props) => {
                             </p>
                         </div>
                     </div>
-
-
                 </div>
             </div>
-
         </div>
 
     )

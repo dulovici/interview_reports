@@ -4,8 +4,6 @@ import { Link, useHistory } from 'react-router-dom';
 import { DiProlog } from "react-icons/di";
 
 export const Header = (props) => {
-
-
     const { setToken } = props;
 
     const removeToken = () => {
@@ -47,8 +45,6 @@ export const Header = (props) => {
                         <button onClick={() => { history.push('/login') }}>Log In</button>
                     </div>
                 </div>}
-
         </>
-
     )
 }

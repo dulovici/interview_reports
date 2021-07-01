@@ -25,8 +25,6 @@ function App() {
   const [token, setToken] = useState(localStorage.getItem('token'))
 
 
-
-  // fetch
   useEffect(() => {
     fetch('http://localhost:3333/api/candidates')
       .then(res => res.json())
