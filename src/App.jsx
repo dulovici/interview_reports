@@ -44,42 +44,40 @@ function App() {
 
 
   return (
-    <>
-      <Switch>
-        <CandidatesProvider value={{ candidates, setCandidates }}>
-          <ReportProvider value={{ reports, setReports }}>
-            <TokenProvider value={{ token, setToken }}>
+    <Switch>
+      <CandidatesProvider value={{ candidates, setCandidates }}>
+        <ReportProvider value={{ reports, setReports }}>
+          <TokenProvider value={{ token, setToken }}>
 
-              <Route exact path='/' component={Home}></Route>
+            <Route exact path='/' component={Home}></Route>
 
-              <Route exact path='/applicants' component={AplHome} />
+            <Route exact path='/applicants' component={AplHome} />
 
-              <Route
-                path='/applicants/candidate/:id'
-                render={(r) => (
-                  <Candidate {...r} />
-                )}
-              ></Route>
+            <Route
+              path='/applicants/candidate/:id'
+              render={(r) => (
+                <Candidate {...r} />
+              )}
+            ></Route>
 
-              <Route path='/login' component={Login} />
+            <Route path='/login' component={Login} />
 
-              <Route exact path='/admin'>
-                {token ?
-                  <AdminHome /> : <Redirect to={'/login'} />
-                }
-              </Route>
+            <Route exact path='/admin'>
+              {token ?
+                <AdminHome /> : <Redirect to={'/login'} />
+              }
+            </Route>
 
-              <Route path='/admin/create-report' >
-                {token ?
-                  <CreateReport /> : <Redirect to={'/'} />}
-              </Route>
+            <Route path='/admin/create-report' >
+              {token ?
+                <CreateReport /> : <Redirect to={'/'} />}
+            </Route>
 
-            </TokenProvider>
-          </ReportProvider>
-        </CandidatesProvider>
-      </Switch>
+          </TokenProvider>
+        </ReportProvider>
+      </CandidatesProvider>
+    </Switch>
 
-    </>
 
   );
 }

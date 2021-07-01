@@ -3,7 +3,6 @@ import '../Report/report.scss'
 import { MdRemoveRedEye, MdHighlightOff } from "react-icons/md";
 
 export const Report = (props) => {
-
     const { data, id, getId, show, reports, setReports } = props;
 
 

@@ -1,7 +1,7 @@
 import { React, useState, useContext } from 'react';
 import { Redirect, useHistory } from 'react-router-dom';
+import { tokenContext } from '../../App';
 import '../Login/login.scss';
-import { tokenContext } from '../../App'
 
 export const Login = (props) => {
     const { token, setToken } = useContext(tokenContext)
@@ -9,12 +9,13 @@ export const Login = (props) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
+
+
     let history = useHistory()
 
     const backToHome = () => {
         history.push('/')
     }
-
 
 
     const logIn = () => {
@@ -54,9 +55,6 @@ export const Login = (props) => {
                         <button onClick={backToHome}>Home</button>
                     </div>
                 </div>
-
-
-
             </div >
     )
 }

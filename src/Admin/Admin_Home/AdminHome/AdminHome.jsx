@@ -10,22 +10,20 @@ import { reportsContext } from '../../../App';
 
 export const AdminHome = (props) => {
     const { setToken } = useContext(tokenContext)
-
     const { reports, setReports } = useContext(reportsContext);
 
     const [singleReport, setSingleReport] = useState()
     const [showPopUp, setShowPopUp] = useState('hidden')
-
     const [search, setSearch] = useState('');
     const [filteredReports, setFilteredReports] = useState([])
+
+
 
     useEffect(() => {
         setFilteredReports(reports?.filter((e) => {
             return e.candidateName?.toLowerCase().includes(search.toLowerCase()) || e.companyName?.toLowerCase().includes(search.toLowerCase())
         }))
     }, [search, reports])
-
-
 
 
     const getId = (par) => {
@@ -48,9 +46,7 @@ export const AdminHome = (props) => {
                 {filteredReports?.map((e) => {
                     return <Report data={e} key={e.id} id={e.id} getId={getId} show={show} reports={reports} setReports={setReports} />
                 })}
-
             </div>
-
 
             {singleReport && <div className={`popUp ${showPopUp}`}>
                 <div className="content">
@@ -60,6 +56,7 @@ export const AdminHome = (props) => {
                             <p onClick={() => setShowPopUp('hidden')}>X</p>
                         </div>
                     </div>
+
                     <hr></hr>
 
                     <div className="info">
@@ -88,8 +85,6 @@ export const AdminHome = (props) => {
                             </p>
                         </div>
                     </div>
-
-
                 </div>
             </div>}
         </>

@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from 'react';
-import '../SelectCompany/selectCompany.scss';
 import { CompanyCard } from '../SelectCompany/CompanyCard/CompanyCard';
+import '../SelectCompany/selectCompany.scss';
 
 export const SelectCompany = (props) => {
     const { getCompanyData, searchCompanies } = props;

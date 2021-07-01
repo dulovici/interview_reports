@@ -16,8 +16,6 @@ export const FillReport = (props) => {
 
 
 
-
-
     return (
         <>
             <div className='fill-report'>
@@ -40,7 +38,6 @@ export const FillReport = (props) => {
                 <textarea placeholder='Write report here.' onChange={(e) => setReport({ ...report, note: e.target.value })}></textarea>
 
             </div>
-
 
         </>
     )

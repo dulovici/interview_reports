@@ -1,6 +1,6 @@
+import '../CreateReport/createReport.scss';
 import { React, useState, useEffect, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-import '../CreateReport/createReport.scss';
 import { Header } from '../../../Common/Header/Header';
 import { SelectCandidate } from '../SelectCandidate/SelectCandidate';
 import { SelectCompany } from '../SelectCompany/SelectCompany';
@@ -14,7 +14,6 @@ import { reportsContext } from '../../../App';
 
 export const CreateReport = (props) => {
     const { reports, setReports } = useContext(reportsContext);
-
     const { setToken } = useContext(tokenContext)
     const { candidates } = useContext(candidatesContext);
 

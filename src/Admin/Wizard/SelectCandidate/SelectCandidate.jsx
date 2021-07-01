@@ -1,6 +1,6 @@
-import { React, useState } from 'react'
-import './selectCandidate.scss';
+import { React, useState } from 'react';
 import { CandidateCard } from '../SelectCandidate/CandidateCard/CandidateCard';
+import './selectCandidate.scss';
 
 export const SelectCandidate = (props) => {
     const { filteredCandidates, getCandidateData, report } = props;
