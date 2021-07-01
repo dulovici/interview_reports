@@ -1,10 +1,9 @@
 import '../Candidate/candidate.scss';
 import '../../../Common/Header/Header';
+import { AplReport } from '../AplReport/AplReport';
 import { React, useState, useContext } from 'react';
 import { Header } from '../../../Common/Header/Header';
-import { AplReport } from '../AplReport/AplReport';
-import { candidatesContext } from '../../../App';
-import { reportsContext } from '../../../App';
+import { candidatesContext,reportsContext } from '../../../App';
 
 export const Candidate = (props) => {
     const { match } = props;

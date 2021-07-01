@@ -3,8 +3,8 @@ import '../AdminHome/adminHome.scss';
 import '../../../Common/Header/Header'
 import { Header } from '../../../Common/Header/Header';
 import { Report } from '../Report/Report'
-import { tokenContext } from '../../../App'
-import { reportsContext } from '../../../App';
+import { tokenContext ,reportsContext } from '../../../App'
+
 
 
 
@@ -12,9 +12,9 @@ export const AdminHome = (props) => {
     const { setToken } = useContext(tokenContext)
     const { reports, setReports } = useContext(reportsContext);
 
+    const [search, setSearch] = useState('');
     const [singleReport, setSingleReport] = useState()
     const [showPopUp, setShowPopUp] = useState('hidden')
-    const [search, setSearch] = useState('');
     const [filteredReports, setFilteredReports] = useState([])
 
 

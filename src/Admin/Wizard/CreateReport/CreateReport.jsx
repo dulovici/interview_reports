@@ -5,18 +5,15 @@ import { Header } from '../../../Common/Header/Header';
 import { SelectCandidate } from '../SelectCandidate/SelectCandidate';
 import { SelectCompany } from '../SelectCompany/SelectCompany';
 import { FillReport } from '../FillReport/FillReport';
-import { tokenContext } from '../../../App'
-import { candidatesContext } from '../../../App';
-import { reportsContext } from '../../../App';
-
+import { candidatesContext,tokenContext,reportsContext  } from '../../../App'
 
 
 
 export const CreateReport = (props) => {
     const { reports, setReports } = useContext(reportsContext);
-    const { setToken } = useContext(tokenContext)
     const { candidates } = useContext(candidatesContext);
-
+    const { setToken } = useContext(tokenContext)
+    
     const [stage, setStage] = useState(1)
     const [report, setReport] = useState({})
     const [searchCandidates, setSearchCandidates] = useState('')
@@ -103,7 +100,6 @@ export const CreateReport = (props) => {
                                         backToHome()
                                     }}>Submit</button>
                                 </div>
-
                             }
                         })()
                     }

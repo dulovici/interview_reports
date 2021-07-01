@@ -1,22 +1,19 @@
 import '../Apl_Home/aplHome.scss';
-import { React, useState, useEffect, useContext } from 'react'
-import { Header } from '../../../Common/Header/Header';
 import { Card } from '../Card/Card';
 import { Link } from 'react-router-dom';
-import { tokenContext } from '../../../App';
-import { candidatesContext } from '../../../App';
-import { reportsContext } from '../../../App';
-
-
+import { Header } from '../../../Common/Header/Header';
+import { React, useState, useEffect, useContext } from 'react'
+import { tokenContext,candidatesContext,reportsContext} from '../../../App';
 
 
 export const AplHome = (props) => {
-    const { setToken } = useContext(tokenContext);
     const { candidates } = useContext(candidatesContext);
     const { reports } = useContext(reportsContext);
-
+    const { setToken } = useContext(tokenContext);
+    
     const [filteredCandidates, setFilteredCandidates] = useState([]);
     const [search, setSearch] = useState('');
+    
 
     useEffect(() => {
         setFilteredCandidates(candidates?.filter((e) => {

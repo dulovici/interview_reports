@@ -4,9 +4,7 @@ import '../CompanyCard/companyCard.scss';
 export const CompanyCard = (props) => {
     const { data, getCompanyData, activeCompanyId, setActiveCompanyId } = props;
 
-
-
-
+    
     return (
         <div className={activeCompanyId === data.id ? `company-card active` : 'company-card'} onClick={() => {
             getCompanyData(data.name, data.id)

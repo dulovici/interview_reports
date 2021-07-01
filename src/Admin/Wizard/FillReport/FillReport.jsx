@@ -17,7 +17,6 @@ export const FillReport = (props) => {
 
 
     return (
-        <>
             <div className='fill-report'>
                 <div className='select'>
                     <p>Date</p>
@@ -36,9 +35,6 @@ export const FillReport = (props) => {
                     </select>
                 </div>
                 <textarea placeholder='Write report here.' onChange={(e) => setReport({ ...report, note: e.target.value })}></textarea>
-
             </div>
-
-        </>
     )
 }
